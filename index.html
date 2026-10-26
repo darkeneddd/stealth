@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stealth</title>
+<meta name="description" content="Quiet systems for loud minds. Currently in stealth.">
+<meta name="theme-color" content="#07070a">
+<meta property="og:title" content="Stealth">
+<meta property="og:description" content="Quiet systems for loud minds. Currently in stealth.">
+<meta property="og:type" content="website">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2307070a'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23ff6a2b' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23ecebe6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="booting">
+
+<!-- boot -->
+<div id="boot" aria-hidden="true">
+  <div class="boot-inner">
+    <div class="boot-count"><span id="bootNum">000</span><i>%</i></div>
+    <div class="boot-line" id="bootLine">waking up…</div>
+  </div>
+</div>
+
+<canvas id="field" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- cursor -->
+<div id="cur" aria-hidden="true"></div>
+<svg id="ring" aria-hidden="true" viewBox="0 0 44 44">
+  <circle class="ring-bg" cx="22" cy="22" r="18"/>
+  <circle class="ring-fg" id="ringFg" cx="22" cy="22" r="18" transform="rotate(-90 22 22)"/>
+</svg>
+
+<header class="top">
+  <a class="mark" href="#top" aria-label="Back to top">
+    <span class="mark-dot"></span><span>STEALTH</span><em>pre-launch</em>
+  </a>
+  <div class="top-meta">
+    <span class="hide-s">STATUS <b>IN STEALTH</b></span>
+    <span class="hide-s">LOC <b>UNDISCLOSED</b></span>
+    <span id="clock">--:--:--</span>
+  </div>
+</header>
+
+<aside class="hud" aria-hidden="true">
+  <span>FOCUS</span><b id="focusPct">000</b><i>%</i>
+</aside>
+
+<main id="top">
+
+  <!-- 00 hero -->
+  <section class="hero" data-field="word">
+    <h1 class="sr">Stealth</h1>
+    <div class="hero-foot">
+      <p class="tag">Quiet systems<br>for loud minds.</p>
+      <p class="hint" id="hint" aria-live="off"><span data-a>hold still.</span><span data-b>now move.</span></p>
+      <p class="cue"><span>scroll</span><i></i></p>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>NO RED BADGES</span><span>✦</span><span>QUIET BY DEFAULT</span><span>✦</span><span>ZERO WILLPOWER REQUIRED</span><span>✦</span><span>NO STREAKS</span><span>✦</span><span>NO GUILT</span><span>✦</span><span>BUILT BY PEOPLE WHO LOST THEIR KEYS</span><span>✦</span>
+      <span>NO RED BADGES</span><span>✦</span><span>QUIET BY DEFAULT</span><span>✦</span><span>ZERO WILLPOWER REQUIRED</span><span>✦</span><span>NO STREAKS</span><span>✦</span><span>NO GUILT</span><span>✦</span><span>BUILT BY PEOPLE WHO LOST THEIR KEYS</span><span>✦</span>
+    </div>
+  </div>
+
+  <!-- 01 manifesto -->
+  <section class="sec manifesto" data-field="grid">
+    <p class="label" data-scramble>01 — signal</p>
+    <p class="scrub big">Your brain isn’t broken. It’s running forty tabs, a song from 2014, and one genuinely brilliant idea — all at once.</p>
+    <p class="scrub big">We’re building the thing that closes the tabs <em>without closing you.</em></p>
+    <p class="scrub big">A <span class="redact" tabindex="0" data-tip="hover to peek">quiet thing</span> that remembers, so you don’t have to.</p>
+  </section>
+
+  <!-- 02 log -->
+  <section class="sec log" data-field="grid">
+    <div class="log-head">
+      <p class="label" data-scramble>02 — activity</p>
+      <h2 class="med">Things that happened while you were <em>hyperfocused</em> on something else.</h2>
+    </div>
+
+    <div class="stats">
+      <div><b data-count="41208">41,208</b><span>tabs closed</span></div>
+      <div><b data-count="9114">9,114</b><span>“later” → now</span></div>
+      <div><b data-count="3306">3,306</b><span>guilt spirals averted</span></div>
+    </div>
+
+    <div class="term" role="img" aria-label="A live feed of automations quietly handling everyday chores.">
+      <div class="term-bar"><i></i><i></i><i></i><span>stealth@undisclosed ~ activity</span><em id="live">● live</em></div>
+      <ol class="term-body" id="feed"></ol>
+    </div>
+  </section>
+
+  <!-- 03 rules -->
+  <section class="sec rules" data-field="grid">
+    <p class="label" data-scramble>03 — house rules</p>
+    <h2 class="med">Three rules. <em>No exceptions.</em></h2>
+    <div class="cards">
+      <article class="card">
+        <span class="n">01</span>
+        <h3>Zero willpower <em>required.</em></h3>
+        <p>If it needs you to remember, it has already failed. We start from there.</p>
+      </article>
+      <article class="card">
+        <span class="n">02</span>
+        <h3>Quiet <em>by default.</em></h3>
+        <p>No red badges. No streaks. No guilt-trips dressed up as notifications.</p>
+      </article>
+      <article class="card">
+        <span class="n">03</span>
+        <h3>Shame-<em>free.</em></h3>
+        <p>Missed it? Fine. It’s handled. <span class="redact" tabindex="0">We didn’t even tell you.</span></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 04 end -->
+  <section class="sec end" id="end" data-field="ring">
+    <p class="label" data-scramble>04 — eta</p>
+    <h2 class="huge">Not <em>yet.</em></h2>
+    <p class="coda">
+      What we’re building isn’t ready to be named yet. Here’s a hint: it’s <span class="redact" tabindex="0">on your side</span>.
+    </p>
+    <p class="coda dim">We’ll tell you when. Probably. After we find our keys.</p>
+    <footer class="foot">
+      <span>© 2026 — undisclosed</span>
+      <a href="#top" class="back">↑ back to the noise</a>
+    </footer>
+  </section>
+
+</main>
+
+<div id="toast" role="status"></div>
+<script src="main.js"></script>
+</body>
+</html>
